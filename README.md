@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/jehaad1/SolidBase/6a019cf286d66d4437160a9fa78b2ed1d1707e20/SolidBase.svg" />
+  <img src="./SolidBase.svg" />
   <h1>SolidBase</h1>
   <h3>Building a scalable frontend app made easy.</h3>
 </div>
