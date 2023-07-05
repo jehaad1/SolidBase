@@ -1,7 +1,7 @@
 {
   "name": "create-solidbase-app",
   "version": "2.0.1",
-  "description": "",
+  "description": "Building a scalable frontend app made easy.",
   "main": "index.js",
   "type": "module",
   "keywords": [],
