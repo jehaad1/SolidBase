@@ -54,7 +54,7 @@ function createTemplateFiles(templateLink, projectName) {
                     if (confirmation) {
                         console.log(chalk.green("\n       Awesome! give us a time to install the dependencies."));
                         console.log("\n       " + chalk.bgGreen.bold(" Installing dependencies... "));
-                        exec("npm i", (error, stdout) => {
+                        exec(projectName !== "." ? `cd ${projectName} && npm i` : "npm i", (error, stdout) => {
                             if (error) {
                                 console.log(chalk.red("\n       ✖ Failed to install the dependencies."));
                                 console.log(chalk.red(`     ${error.message}`));
@@ -65,8 +65,11 @@ function createTemplateFiles(templateLink, projectName) {
                             };
                         });
                     } else {
-                        console.log(chalk.green("\n       Never mind! You can still run ") + chalk.bgGray.bold(" npm i ") + chalk.green(" later to install them.\n"));
-                        end();
+                        if (projectName === ".") {
+                            console.log(chalk.green("\n       Never mind! You can still run ") + chalk.bgGray.bold(" npm i ") + chalk.green(" later to install them.\n"));
+                        } else {
+                            console.log(chalk.green("\n       Never mind! You can still run:") + "\n       " + chalk.bgGray.bold(` cd ${projectName}  `) + "\n       " + chalk.bgGray.bold(` npm i${" ".repeat(projectName.length)}`) + chalk.green("\n       to install them.\n"));
+                        } end();
                     };
                 }).catch((err) => {
                     console.log(chalk.red("\n     ", err));
