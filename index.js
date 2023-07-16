@@ -111,7 +111,7 @@ function end() {
     if (firebaseSetup) {
         console.log("\n       " + chalk.yellow.bold("Firebase Tip:"));
         console.log("       " + chalk.yellow("We have set up Firebase Cloud Firestore and Auth in the template, but you need to set up the Firebase project in the Firebase Console."));
-        console.log("       " + chalk.yellow("Follow these steps to set up the Firebase project: https://github.com/jehaad1/SolidBase-CLI/blob/main/FirebaseSetup.md\n"));
+        console.log("       " + chalk.yellow("Follow these steps to set up the Firebase project: https://github.com/jehaad1/SolidBase/blob/main/FirebaseSetup.md\n"));
     };
     console.log("\n       " + chalk.blue.bold("Made with ❤️  by Jehaad."));
     console.log(chalk.blue("       SolidBase: https://github.com/jehaad1/SolidBase"));
