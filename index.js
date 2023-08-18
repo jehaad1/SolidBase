@@ -8,7 +8,6 @@ import { exec } from "child_process";
 
 const stackName = "SolidBase";
 let firebaseSetup = false;
-const CURR_DIR = process.cwd();
 figlet(stackName, (err, data) => {
     console.log(gradient.pastel.multiline(data));
     initPrompt();
@@ -45,14 +44,14 @@ function createTemplateFiles(templateLink, projectName) {
             console.log(chalk.red("\n       ✖ Failed to clone the template."));
             console.log(chalk.red(`     ${error.message}`));
         } else {
-            if (projectName === ".") console.log(chalk.green("\n       ✔ Template cloned successfully! Go to it by running ") + chalk.bgGray.bold(` cd ${projectName} `) + "\n");
-            else console.log(chalk.green("\n       ✔ Template cloned successfully!\n"));
+            if (projectName === ".") console.log(chalk.green("\n       ✔ Template cloned successfully!\n"))
+            else console.log(chalk.green("\n       ✔ Template cloned successfully! Go to it by running ") + chalk.bgGray.bold(` cd ${projectName} `) + "\n");
             console.log(stdout);
 
             promptYesNo("     Do you want us to install the dependencies for you?")
                 .then((confirmation) => {
                     if (confirmation) {
-                        console.log(chalk.green("\n       Awesome! give us a time to install the dependencies."));
+                        console.log(chalk.green("\n       Awesome! give us some time to install the dependencies."));
                         console.log("\n       " + chalk.bgGreen.bold(" Installing dependencies... "));
                         exec(projectName !== "." ? `cd ${projectName} && npm i` : "npm i", (error, stdout) => {
                             if (error) {
