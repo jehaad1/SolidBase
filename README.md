@@ -23,5 +23,5 @@
 ## Install The Stack - تحميل المجموعة
 
 ```js
-npm create solidbase-app
+npm create solidbase-app@latest
 ```
