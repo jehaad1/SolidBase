@@ -6,6 +6,7 @@
   "type": "module",
   "keywords": [],
   "author": "",
+  "repository": "https://github.com/jehaad1/SolidBase",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.2.0",
